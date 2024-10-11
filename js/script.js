@@ -27,3 +27,5 @@ function addRow(clients){
         row.insertCell().innerHTML = client.state
     }
 }
+
+$("#cepInput").mask("99999-999");
