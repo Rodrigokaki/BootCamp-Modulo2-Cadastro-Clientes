@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2 class="text-center my-5">Cadastro de Clientes:</h2>
+    <div class="container shadow rounded p-5">
+
+        <form>
+
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <label for="nameInput" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nameInput">
+                </div>
+                <div class="col-6">
+                    <label for="surnameInput" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="surnameInput">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="cepInput" class="form-label">Pesquise pelo CEP:</label>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="cepInput">
+                </div>
+            </div>
+
+
+            <fieldset disabled>
+                <div class="mb-3 row">
+                    <div class="col-10">
+                        <label for="adressInput" class="form-label">Endereço:</label>
+                        <input type="text" class="form-control" id="adressInput">
+                    </div>
+                    <div class="col-2">
+                        <label for="numberInput" class="form-label">Número:</label>
+                        <input type="text" class="form-control" id="numberInput">
+                    </div>
+                </div>
+    
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label for="districtInput" class="form-label">Bairro:</label>
+                        <input type="text" class="form-control" id="districtInput">
+                    </div>
+                    <div class="col-6">
+                        <label for="cityInput" class="form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="cityInput">
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="stateInput" class="form-label">Estado:</label>
+                    <div class="col-2">
+                        <input type="text" class="form-control" id="stateInput">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="d-flex justify-content-center mb-5">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+
+        </form>
+
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome Completo</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row">1</th>
+                <td>Rodrigo Kakiuchi</td>
+                <td>Rua Leite Penteado, 999</td>
+                <td>18010-050</td>
+                <td>Centro</td>
+                <td>Sorocaba</td>
+                <td>SP</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
