@@ -25,44 +25,43 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 row">
                 <label for="cepInput" class="form-label">Pesquise pelo CEP:</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" id="cepInput">
+                    <input type="text" class="form-control" id="cepInput" onblur="searchCep()">
                 </div>
+                <small class="text-danger col-3 d-flex align-items-center" id="error"></small>
             </div>
 
 
-            <fieldset disabled>
-                <div class="mb-3 row">
-                    <div class="col-10">
-                        <label for="adressInput" class="form-label">Endereço:</label>
-                        <input type="text" class="form-control" id="adressInput">
-                    </div>
-                    <div class="col-2">
-                        <label for="adressNumberInput" class="form-label">Número:</label>
-                        <input type="number" class="form-control" id="adressNumberInput">
-                    </div>
+            <div class="mb-3 row">
+                <div class="col-10">
+                    <label for="adressInput" class="form-label">Endereço:</label>
+                    <input type="text" class="form-control" id="adressInput">
                 </div>
-    
-                <div class="mb-3 row">
-                    <div class="col-6">
-                        <label for="districtInput" class="form-label">Bairro:</label>
-                        <input type="text" class="form-control" id="districtInput">
-                    </div>
-                    <div class="col-6">
-                        <label for="cityInput" class="form-label">Cidade:</label>
-                        <input type="text" class="form-control" id="cityInput">
-                    </div>
+                <div class="col-2">
+                    <label for="adressNumberInput" class="form-label">Número:</label>
+                    <input type="number" class="form-control" id="adressNumberInput">
                 </div>
-    
-                <div class="mb-3">
-                    <label for="stateInput" class="form-label">Estado:</label>
-                    <div class="col-2">
-                        <input type="text" class="form-control" id="stateInput">
-                    </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <label for="districtInput" class="form-label">Bairro:</label>
+                    <input type="text" class="form-control" id="districtInput">
                 </div>
-            </fieldset>
+                <div class="col-6">
+                    <label for="cityInput" class="form-label">Cidade:</label>
+                    <input type="text" class="form-control" id="cityInput">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="stateInput" class="form-label">Estado:</label>
+                <div class="col-2">
+                    <input type="text" class="form-control" id="stateInput">
+                </div>
+            </div>
 
             <div class="d-flex justify-content-center mb-5">
                 <button type="submit" class="btn btn-primary">Salvar</button>

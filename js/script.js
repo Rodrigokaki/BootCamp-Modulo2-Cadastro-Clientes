@@ -1,4 +1,10 @@
-clients = [
+disableInput("adressInput", true)
+disableInput("districtInput", true)
+disableInput("adressNumberInput", true)
+disableInput("cityInput", true)
+disableInput("stateInput", true)
+
+clients = [ 
     {
         id : 1,
         name : 'Rodrigo',
@@ -29,3 +35,51 @@ function addRow(clients){
 }
 
 $("#cepInput").mask("99999-999");
+
+function searchCep(){
+    var cepInput = document.getElementById("cepInput").value
+    var cep = ""
+    for(let i of cepInput){
+        if(!isNaN(i)){
+            cep += i
+        }
+    }
+    
+    if(cep.length < 8){
+        messageError("CEP inválido")
+        return
+    }
+
+    var url = `https://viacep.com.br/ws/${cep}/json/`
+
+    $.getJSON(url, clientCep => {
+        if(("erro" in clientCep)){
+            fillFormWithCep(clientCep)
+            disableInput("adressNumberInput", true)
+            messageError("Não encontrado")
+        }
+        else{
+            fillFormWithCep(clientCep)
+            disableInput("adressNumberInput", false)
+            messageError("")
+        }
+    })
+}
+
+function fillFormWithCep(clientCep){
+    document.getElementById("adressInput").value = clientCep.logradouro || ""
+    document.getElementById("districtInput").value = clientCep.bairro || ""
+    document.getElementById("cityInput").value = clientCep.localidade || ""
+    document.getElementById("stateInput").value = clientCep.uf || ""
+    document.getElementById("adressNumberInput").value = ""
+}
+
+function disableInput(input, state){
+    document.getElementById(input).disabled = state
+}
+
+function messageError(message){
+    if(error = true){
+        document.getElementById("error").innerHTML = message
+    }
+}
