@@ -15,11 +15,11 @@
         <form onsubmit="save(); return false">
 
             <div class="mb-3 row">
-                <div class="col-6">
+                <div class="mb-3 mb-md-0 col-12 col-md-6">
                     <label for="nameInput" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="nameInput" required>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <label for="surnameInput" class="form-label">Sobrenome</label>
                     <input type="text" class="form-control" id="surnameInput" required>
                 </div>
@@ -27,10 +27,10 @@
 
             <div class="mb-3 row">
                 <label for="cepInput" class="form-label">Pesquise pelo CEP:</label>
-                <div class="col-3">
+                <div class="col-6 col-md-3">
                     <input type="text" class="form-control" id="cepInput" onblur="searchCep()" required>
                 </div>
-                <small class="text-danger col-3 d-flex align-items-center" id="error"></small>
+                <small class="text-danger col-6 col-md-3 d-flex align-items-center" id="error"></small>
             </div>
 
 
@@ -46,11 +46,11 @@
             </div>
 
             <div class="mb-3 row">
-                <div class="col-6">
+                <div class="mb-3 mb-md-0 col-12 col-md-6">
                     <label for="districtInput" class="form-label">Bairro:</label>
                     <input type="text" class="form-control" id="districtInput">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <label for="cityInput" class="form-label">Cidade:</label>
                     <input type="text" class="form-control" id="cityInput">
                 </div>
@@ -76,10 +76,10 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome Completo</th>
                 <th scope="col">Endereço</th>
-                <th scope="col">CEP</th>
-                <th scope="col">Bairro</th>
+                <th scope="col" class="d-none d-md-table-cell">CEP</th>
+                <th scope="col" class="d-none d-md-table-cell">Bairro</th>
                 <th scope="col">Cidade</th>
-                <th scope="col">Estado</th>
+                <th scope="col" class="d-none d-md-table-cell">Estado</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">

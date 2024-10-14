@@ -12,10 +12,20 @@ function addRow(client){
     row.insertCell().outerHTML = `<th>${client.id}</th>`
     row.insertCell().innerHTML = client.name + " " + client.surname
     row.insertCell().innerHTML = client.adress + ", " + client.adressNumber
-    row.insertCell().innerHTML = client.cep
-    row.insertCell().innerHTML = client.district
+
+    let cell = row.insertCell()
+    cell.innerHTML = client.cep
+    cell.className = 'd-none d-md-table-cell'
+
+    cell = row.insertCell()
+    cell.innerHTML = client.district
+    cell.className = 'd-none d-md-table-cell'
+
     row.insertCell().innerHTML = client.city
-    row.insertCell().innerHTML = client.state
+
+    cell = row.insertCell()
+    cell.innerHTML = client.state
+    cell.className = 'd-none d-md-table-cell'
 
 }
 
