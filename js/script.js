@@ -47,19 +47,20 @@ function searchCep(){
     
     if(cep.length < 8){
         messageError("CEP inválido")
+        fillFormWithCep("")
+        disableInput("adressNumberInput", true)
         return
     }
 
     var url = `https://viacep.com.br/ws/${cep}/json/`
 
     $.getJSON(url, clientCep => {
+        fillFormWithCep(clientCep)
         if(("erro" in clientCep)){
-            fillFormWithCep(clientCep)
             disableInput("adressNumberInput", true)
             messageError("Não encontrado")
         }
         else{
-            fillFormWithCep(clientCep)
             disableInput("adressNumberInput", false)
             messageError("")
         }
