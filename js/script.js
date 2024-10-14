@@ -4,34 +4,19 @@ disableInput("adressNumberInput", true)
 disableInput("cityInput", true)
 disableInput("stateInput", true)
 
-clients = [ 
-    {
-        id : 1,
-        name : 'Rodrigo',
-        surname : "Kakiuchi",
-        adress : "Rua Leite Penteado",
-        adressNumber : 999,
-        cep : "18010-050",
-        district : "Centro",
-        city : "Sorocaba",
-        state : "SP"
-    }
-];
+clients = []
 
-addRow(clients)
-
-function addRow(clients){
+function addRow(client){
     let table = document.getElementById("clientsTable")
-    for(let client of clients){
-        let row = table.insertRow()
-        row.insertCell().outerHTML = `<th>${client.id}</th>`
-        row.insertCell().innerHTML = client.name + " " + client.surname
-        row.insertCell().innerHTML = client.adress + ", " + client.adressNumber
-        row.insertCell().innerHTML = client.cep
-        row.insertCell().innerHTML = client.district
-        row.insertCell().innerHTML = client.city
-        row.insertCell().innerHTML = client.state
-    }
+    let row = table.insertRow()
+    row.insertCell().outerHTML = `<th>${client.id}</th>`
+    row.insertCell().innerHTML = client.name + " " + client.surname
+    row.insertCell().innerHTML = client.adress + ", " + client.adressNumber
+    row.insertCell().innerHTML = client.cep
+    row.insertCell().innerHTML = client.district
+    row.insertCell().innerHTML = client.city
+    row.insertCell().innerHTML = client.state
+
 }
 
 $("#cepInput").mask("99999-999");
@@ -83,4 +68,21 @@ function messageError(message){
     if(error = true){
         document.getElementById("error").innerHTML = message
     }
+}
+
+function save(){
+    let newClient = {
+        id : clients.length + 1,
+        name : document.getElementById("nameInput").value,
+        surname : document.getElementById("surnameInput").value,
+        adress : document.getElementById("adressInput").value,
+        adressNumber : document.getElementById("adressNumberInput").value,
+        cep : document.getElementById("cepInput").value,
+        district : document.getElementById("districtInput").value,
+        city : document.getElementById("cityInput").value,
+        state : document.getElementById("stateInput").value
+    }
+
+    clients.push(newClient)
+    addRow(newClient)
 }
