@@ -32,9 +32,10 @@ function addRow(client){
 $("#cepInput").mask("99999-999");
 
 function searchCep(){
-    var cepInput = document.getElementById("cepInput").value
+    var cepInput = document.getElementById("cepInput")
+    var cepValue = cepInput.value
     var cep = ""
-    for(let i of cepInput){
+    for(let i of cepValue){
         if(!isNaN(i)){
             cep += i
         }
@@ -44,6 +45,7 @@ function searchCep(){
         messageError("CEP inválido")
         fillFormWithCep("")
         disableInput("adressNumberInput", true)
+        cepInput.setCustomValidity("CEP inválido. Por favor, insira um CEP válido.")
         return
     }
 
@@ -54,10 +56,12 @@ function searchCep(){
         if(("erro" in clientCep)){
             disableInput("adressNumberInput", true)
             messageError("Não encontrado")
+            cepInput.setCustomValidity("CEP inválido. Por favor, insira um CEP válido.")
         }
         else{
             disableInput("adressNumberInput", false)
             messageError("")
+            cepInput.setCustomValidity("")
         }
     })
 }
